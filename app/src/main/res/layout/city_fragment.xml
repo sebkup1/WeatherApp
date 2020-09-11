@@ -6,7 +6,7 @@
     <data>
         <variable
             name="viewModel"
-            type="com.skupis.weatherapp.ui.city.CityViewModel" />
+            type="com.skupis.weatherapp.ui.CityViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout

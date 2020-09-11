@@ -9,11 +9,10 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import com.skupis.weatherapp.R
 import com.skupis.weatherapp.databinding.CityFragmentBinding
+import com.skupis.weatherapp.ui.CityViewModel
 
 
 class CityFragment : Fragment() {
-
-    private lateinit var viewModel: CityViewModel
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,

@@ -10,7 +10,7 @@ import com.skupis.weatherapp.R
 
 class WeatherFragment : Fragment() {
 
-    private lateinit var viewModel: WeatherViewModel
+//    private lateinit var viewModel: WeatherViewModel
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -21,7 +21,7 @@ class WeatherFragment : Fragment() {
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-        viewModel = ViewModelProvider(this).get(WeatherViewModel::class.java)
+//        viewModel = ViewModelProvider(this).get(WeatherViewModel::class.java)
     }
 
 }
