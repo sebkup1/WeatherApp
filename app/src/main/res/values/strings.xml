@@ -2,6 +2,9 @@
     <string name="app_name">WeatherApp</string>
     <string name="input_city_name_text">Wpisz nazwę miasta</string>
     <string name="show_weather_button_text">Pokaż pogodę</string>
+    <string name="service_unavailable_text">Usługa niedostępna</string>
+    <string name="searching_city_text">Wyszukiwanie miasta...</string>
+    <string name="city_not_found_text">Nieznane miasto</string>
     <string-array name="cities">
         <item>Aleksandrów Kujawski</item>
         <item>Aleksandrów Łódzki</item>

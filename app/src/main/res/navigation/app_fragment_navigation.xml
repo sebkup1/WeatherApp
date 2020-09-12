@@ -14,5 +14,9 @@
     <fragment
         android:id="@+id/weatherFragment"
         android:name="com.skupis.weatherapp.ui.weather.WeatherFragment"
-        android:label="WeatherFragment" />
+        android:label="WeatherFragment" >
+        <argument
+            android:name="cityName"
+            app:argType="string" />
+    </fragment>
 </navigation>
