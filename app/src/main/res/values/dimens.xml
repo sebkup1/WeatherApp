@@ -2,4 +2,5 @@
 <resources>
     <dimen name="margin">30dp</dimen>
     <dimen name="service_unreachable_text_size">30sp</dimen>
+    <dimen name="temperature_text_size">80sp</dimen>
 </resources>

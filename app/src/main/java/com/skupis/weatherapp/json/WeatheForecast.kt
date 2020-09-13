@@ -1,4 +1,4 @@
-package com.skupis.weatherapp.data
+package com.skupis.weatherapp.json
 
 import android.os.Parcelable
 import com.squareup.moshi.Json

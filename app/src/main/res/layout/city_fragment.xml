@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
+
         <variable
             name="viewModel"
             type="com.skupis.weatherapp.ui.CityViewModel" />
@@ -31,22 +32,22 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/margin"
-            android:text="@string/show_weather_button_text"
             android:onClick="@{() -> viewModel.showWeatherForCity(autoCompleteTextView)}"
+            android:text="@string/show_weather_button_text"
             app:enableStatus="@{autoCompleteTextView.text.toString()}"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/autoCompleteTextView" />
 
         <TextView
-            android:id="@+id/textView"
+            android:id="@+id/statusLabel"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/margin"
             android:textSize="@dimen/service_unreachable_text_size"
+            android:visibility="visible"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            android:visibility="visible"
             app:layout_constraintTop_toBottomOf="@+id/show_weather_button" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
