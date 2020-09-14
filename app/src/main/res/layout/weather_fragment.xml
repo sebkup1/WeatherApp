@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
+
         <variable
             name="viewModel"
             type="com.skupis.weatherapp.ui.CityViewModel" />
@@ -31,10 +32,10 @@
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/margin"
             android:textSize="@dimen/temperature_text_size"
-            app:temperatureText="@{viewModel.temperature}"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/cityName"
+            app:temperatureText="@{viewModel.temperature}"
             tools:text="26" />
 
         <TextView

@@ -22,12 +22,16 @@ fun temperatureText(textView: TextView, tempValue: String?) {
     with(tempValue.toFloat()) {
         textView.setTextColor(
             context.getColor(
-                if (this < 10) {
-                    R.color.colorBlue
-                } else if (this > 20) {
-                    R.color.colorRed
-                } else {
-                    R.color.colorGrey
+                when {
+                    this < 10 -> {
+                        R.color.colorBlue
+                    }
+                    this > 20 -> {
+                        R.color.colorRed
+                    }
+                    else -> {
+                        R.color.colorGrey
+                    }
                 }
             )
         )

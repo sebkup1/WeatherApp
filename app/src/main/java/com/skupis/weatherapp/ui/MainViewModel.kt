@@ -6,6 +6,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.skupis.weatherapp.WeatherApi
+import com.skupis.weatherapp.json.CityInfo
 import com.skupis.weatherapp.json.CurrentWeatherInfo
 import kotlinx.coroutines.launch
 import timber.log.Timber
@@ -26,7 +27,7 @@ class CityViewModel : ViewModel() {
     }
 
     fun showWeatherForCity(autoCompleteTextView: AutoCompleteTextView?) {
-        val a = autoCompleteTextView?.run {
+        autoCompleteTextView?.run {
             val cityName = autoCompleteTextView.text.toString()
             lastTypedCity = cityName
             Timber.d("request for city ${autoCompleteTextView.text}")
@@ -42,20 +43,24 @@ class CityViewModel : ViewModel() {
                     }
                     _status.value = WeatherApiStatus.CITY_FOUND
                     //Todo: save given cityName to db
-                    try {
-                        val resp =
-                            WeatherApi.retrofitService.getWeatherInfoForCity(cityKey = response[0].Key)
-                        parseReceivedData(resp)
-                        _status.value = WeatherApiStatus.WEATHER_INFO_FETCHED
-                    } catch (e: Exception) {
-                        Timber.e(e)
-                        _status.value = WeatherApiStatus.ERROR
-                    }
+                    getWeatherData(response)
                 } catch (e: Exception) {
                     Timber.e(e)
                     _status.value = WeatherApiStatus.ERROR
                 }
             }
+        }
+    }
+
+    private suspend fun getWeatherData(cityRequestResponse: List<CityInfo>) {
+        try {
+            val resp =
+                WeatherApi.retrofitService.getWeatherInfoForCity(cityKey = cityRequestResponse[0].Key)
+            parseReceivedData(resp)
+            _status.value = WeatherApiStatus.WEATHER_INFO_FETCHED
+        } catch (e: Exception) {
+            Timber.e(e)
+            _status.value = WeatherApiStatus.ERROR
         }
     }
 
