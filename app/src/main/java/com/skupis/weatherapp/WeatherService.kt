@@ -11,7 +11,7 @@ import retrofit2.http.Path
 import retrofit2.http.Query
 
 private const val BASE_URL = "https://dataservice.accuweather.com/"
-private const val API_KEY = "ync8btPXqIfzAUnRDkHSeJ9yyc9wy7mN"
+private const val API_KEY = "M1NhJjfmPy3twmyaG7Ojst1OgAUjs24q"
 
 private val moshi = Moshi.Builder()
     .add(KotlinJsonAdapterFactory())
